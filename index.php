@@ -28,7 +28,7 @@ $isLoggedIn = isset($_SESSION['username']);
                     <a href="logout.php" class="logout-button">Выйти</a>
                 </div>
             <?php else: ?>
-                <!-- Кнопки для неавторизованных пользователей -->
+                
                 <a href="login.php" class="auth-button">Вход</a>
                 <a href="register.php" class="auth-button">Регистрация</a>
             <?php endif; ?>
