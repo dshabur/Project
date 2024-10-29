@@ -1,0 +1,358 @@
+/* Основные стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f1dcc9, #e0c3fc); /* Градиентный фон */
+    color: #42313a; /* Красное дерево */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Стили для контейнера */
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Стили для заголовков */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #42313a; /* Красное дерево */
+}
+
+.highlight {
+    color: #6c2d2c; /* Каштан */
+}
+
+/* Стили для кнопок */
+.start-button, .course-button {
+    background-color: #9f4636; /* Кожа */
+    color: #f1dcc9; /* Пергамент */
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Добавлены переходы */
+}
+
+.start-button:hover, .course-button:hover {
+    background-color: #6c2d2c; /* Каштан */
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Сетка для курсов */
+.course-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Стили для карточек курсов */
+.course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(33.333% - 20px); /* Три карточки в ряд */
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Стили для списка тем и статей */
+ul.topics-list, ul.articles-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.topics-list li, ul.articles-list li {
+    margin: 10px 0;
+}
+
+ul.topics-list a, ul.articles-list a {
+    text-decoration: none;
+    color: #9f4636; /* Кожа */
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    display: inline-block; /* Сделать ссылки блочными для эффекта */
+    padding: 10px 15px; /* Добавить отступы для удобства */
+    border-radius: 5px; /* Скругление углов */
+}
+
+ul.topics-list a:hover, ul.articles-list a:hover {
+    color: #6c2d2c; /* Каштан */
+    background-color: #f1dcc9; /* Пергамент */
+}
+
+/* Стили для текста */
+.container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #42313a; /* Красное дерево */
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .start-button, .course-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .course-grid {
+        flex-direction: column;
+    }
+
+    .course-card {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        margin-bottom: 20px;
+    }
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.modal-buttons .auth-button {
+    background-color: #9f4636;
+    color: #f1dcc9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons .auth-button:hover {
+    background-color: #6c2d2c;
+}
+
+/* Стили для кнопок социальных сетей */
+.social-share {
+    margin-top: 20px;
+}
+
+.social-share a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #42313a; /* Красное дерево */
+}
+
+.social-share a:hover {
+    color: #6c2d2c; /* Каштан */
+}
+
+/* Стили для поиска */
+#search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/* Стили навигации */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #42313a;
+    color: #f1dcc9;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    font-size: 1.5em;
+    color: #f1dcc9;
+}
+
+.navbar-logo a {
+    font-size: 1.5em;
+    color: #f1dcc9;
+    text-decoration: none;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-button, .logout-button {
+    background-color: #9f4636;
+    color: #f1dcc9;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover, .logout-button:hover {
+    background-color: #6c2d2c;
+}
+/* Контейнер кнопки "Поделиться" */
+.share-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.share-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #9f4636;
+    color: #f1dcc9;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.share-toggle:hover {
+    background-color: #6c2d2c;
+}
+
+.share-options {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.share-options.show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.share-options a {
+    font-size: 1.5em;
+    color: #42313a;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.share-options a:hover {
+    color: #9f4636;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Стили профиля */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.avatar-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-articles ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-articles li {
+    margin: 5px 0;
+}
